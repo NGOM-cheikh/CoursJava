@@ -9,7 +9,7 @@ public class DeclarationApp {
     long longVariable = 40000L;
 
 
-    // Affichage des valeurs des variables
+    // Affichage valeurs & variables
         System.out.println("Valeur de byteVariable: " + byteVariable);
         System.out.println("Valeur de shortVariable: " + shortVariable);
         System.out.println("Valeur de intVariable: " + intVariable);
