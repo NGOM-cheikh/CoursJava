@@ -1,15 +1,17 @@
 
-/// tP  APPRENDRE A REDEFINIR EQUALS
+/// tp 2 LES ENUMERATIONS
 
 package fr.diginamic;
 
     public class Ville {
         private String nom;
-        private int population;
+        private int nbHabitants;
+        private Continent continent;
 
-        public Ville(String nom, int population) {
+        public Ville(String nom, int nbHabitants, Continent continent) {
             this.nom = nom;
-            this.population = population;
+            this.nbHabitants = nbHabitants;
+            this.continent = continent;
         }
 
         public String getNom() {
@@ -20,29 +22,28 @@ package fr.diginamic;
             this.nom = nom;
         }
 
-        public int getPopulation() {
-            return population;
+        public int getNbHabitants() {
+            return nbHabitants;
         }
 
-        public void setPopulation(int population) {
-            this.population = population;
+        public void setNbHabitants(int nbHabitants) {
+            this.nbHabitants = nbHabitants;
         }
 
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+        public Continent getContinent() {
+            return continent;
+        }
 
-            Ville ville = (Ville) o;
-
-            if (population != ville.population) return false;
-            return nom != null ? nom.equals(ville.nom) : ville.nom == null;
+        public void setContinent(Continent continent) {
+            this.continent = continent;
         }
 
         @Override
-        public int hashCode() {
-            int result = nom != null ? nom.hashCode() : 0;
-            result = 31 * result + population;
-            return result;
+        public String toString() {
+            return "Ville{" +
+                    "nom='" + nom + '\'' +
+                    ", nbHabitants=" + nbHabitants +
+                    ", continent=" + continent.getLibelle() +
+                    '}';
         }
     }
